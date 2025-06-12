@@ -168,9 +168,12 @@ def main():
         lat, lon = location['latitude'], location['longitude']
         st.success(f"📍 Your location: {lat:.5f}, {lon:.5f}")
 
-        radius = st.slider("Search radius (meters)", 500, 5000, 2000, 100)
 
-        #find car repair shops, query can be changed
+        #don't mess with this, it needs to be in Meters for the query 
+        miles = st.slider("Search radius (miles)", 0.3, 3.0, 1.2, 0.1)
+        radius = int(miles * 1609.34)
+
+        #find car repair shops, query can be changed [radius -> meters for openpass]
         query = f"""
         [out:json];
         (
@@ -212,7 +215,7 @@ def main():
                         data=df,
                         get_position='[lon, lat]',
                         get_fill_color='[255, 0, 0, 200]',
-                        get_radius=120,
+                        get_radius=100,
                     )
                 ]
             ))
