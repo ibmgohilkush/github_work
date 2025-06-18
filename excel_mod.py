@@ -79,9 +79,11 @@ def main():
                 "role": "user",
                 "content": [
                     {"type": "text", "text": (
-                        "For the following customer feedback data, label each row as either Positive or Negative sentiment. Just do the first 150 rows. Don't give me a code output, just solve it and give me that output."
+                        "For the following customer feedback data, label each row as either Positive or Negative sentiment. Just do the first 50 rows. Don't give me a code output, just solve it and give me that output."
                         "Return your answer as a two-column table with the original feedback in one column and the sentiment label (Positive/Negative) in the other. "
-                        "After the table, provide the total count of Positive and Negative labels.\n\n"
+                        "- Summarize all the feedback into a specific, focused summary that uses evidence from diverse points to understand it.\n"
+                        "- Only provide a short summary, not code or pseudocode.\n"
+                        "Finally, provide the total count of Positive and Negative labels.\n\n"
                         f"{text_from_excel}"
                     )}
                 ]

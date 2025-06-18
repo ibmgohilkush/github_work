@@ -80,8 +80,8 @@ def main():
                     {"type": "text", "text": (
                         "Given the following customer feedback data, please answer in plain English (do not write code):\n"
                         "- Summarize the most common feedback points.\n"
-                        "- State if the overall sentiment is positive or negative, and briefly reference the evidence supporting that sentiment.\n"
                         "- Only provide a short summary, not code or pseudocode.\n"
+                        "- State if the overall sentiment is positive or negative, and briefly reference the evidence supporting that sentiment.\n"
                         "- At the bottom of everything, seperated, if the overall is positive feedback, then just say Positive, else just say Negative.\n\n"
                         f"{text_from_excel}"
                     )}
