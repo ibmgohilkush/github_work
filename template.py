@@ -3,6 +3,7 @@ import base64
 from PIL import Image
 
 api_key = st.secrets["IBM_API_KEY"]
+project_id = st.secrets["PROJECT_ID"]
 
 def convert_image_to_base64(uploaded_file):
     bytes_data = uploaded_file.getvalue()
@@ -95,7 +96,7 @@ def main():
         body = {
         "messages": [model_messages[-1]],
         #use whatever id you have for this
-        "project_id": "ee75eed4-9146-44e2-af95-444d951a4d13",
+        "project_id": project_id,
         "model_id": "meta-llama/llama-3-2-90b-vision-instruct",
         "decoding_method": "greedy",
         "repetition_penalty": 1,

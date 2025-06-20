@@ -5,6 +5,7 @@ import requests
 import PyPDF2
 
 api_key = st.secrets["IBM_API_KEY"]
+project_id = st.secrets["PROJECT_ID"]
 
 def convert_image_to_base64(uploaded_file):
     bytes_data = uploaded_file.getvalue()
@@ -45,7 +46,7 @@ def query_model(messages):
     url = "https://us-south.ml.cloud.ibm.com/ml/v1/text/chat?version=2023-05-29"
     body = {
         "messages": messages,
-        "project_id": "ee75eed4-9146-44e2-af95-444d951a4d13",
+        "project_id": project_id,
         "model_id": "meta-llama/Llama-4-Maverick-17B-128E-Instruct-FP8",
         "decoding_method": "greedy",
         "repetition_penalty": 1,

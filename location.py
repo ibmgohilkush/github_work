@@ -2,9 +2,6 @@ import streamlit as st
 import requests
 import pandas as pd
 import pydeck as pdk
-
-# You need to install this package first:
-# pip install streamlit-geolocation
 from streamlit_geolocation import streamlit_geolocation
 
 st.set_page_config(page_title="Nearby Repair Shops", layout="wide")

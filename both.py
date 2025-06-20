@@ -5,6 +5,7 @@ import requests
 import PyPDF2
 
 api_key = st.secrets["IBM_API_KEY"]
+project_id = st.secrets["PROJECT_ID"]
 
 #the code can only understand it in base 64, so you have to convert it initially
     #this is done by getting the value of the file, then encoding in b64.encode, then decode that after to get the image
@@ -53,7 +54,7 @@ def query_model(messages):
     url = "https://us-south.ml.cloud.ibm.com/ml/v1/text/chat?version=2023-05-29"
     body = {
         "messages": messages,
-        "project_id": "ee75eed4-9146-44e2-af95-444d951a4d13",
+        "project_id": project_id,
         "model_id": "meta-llama/llama-3-2-90b-vision-instruct",
         "decoding_method": "greedy",
         "repetition_penalty": 1,
