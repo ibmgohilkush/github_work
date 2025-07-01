@@ -110,7 +110,7 @@ def main():
         #for vague queries, we can use it 
         vague_queries = [
             "news", "what's the news", "latest news", "top news",
-            "any news", "trending", "what’s happening"
+            "any news", "trending", "what’s happening", "pull up"
         ]
         search_trigger_keywords = ["news", "latest", "trending", "top", "headlines", "update"]
 
